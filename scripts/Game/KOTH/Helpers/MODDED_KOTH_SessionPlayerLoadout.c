@@ -210,12 +210,13 @@ modded class KOTH_SessionPlayerLoadout : Managed
 					return true;
 				}
 				return false;
-			case KOTH_ShopItemCategory.Accessory && item.m_itemResource == catEars:
-				if (m_neko)
-				{
-					m_neko = null;
-					return true;
-				}
+			case KOTH_ShopItemCategory.Accessory:
+				 if(item.m_itemResource == catEars)
+					if (m_neko)
+					{
+						m_neko = null;
+						return true;
+					}
 				return false;
 			case KOTH_ShopItemCategory.Grenade:
 			case KOTH_ShopItemCategory.Smoke:
