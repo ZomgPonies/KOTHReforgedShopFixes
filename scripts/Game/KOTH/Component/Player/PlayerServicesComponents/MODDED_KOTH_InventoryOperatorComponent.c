@@ -67,4 +67,17 @@ modded class KOTH_InventoryOperatorComponent : KOTH_PlayerServicesComponent
 		ProcessNextStagedLoadoutItem(playerId);
 	}
 
+    override protected bool AddEquipmentItemWithCallback(KOTH_ShopItem item, SCR_InventoryStorageManagerComponent inventory, InventoryOperationCallback cb)
+    {
+        if (item && item.m_category == KOTH_ShopItemCategory.Binocular)
+            return AddBinocularItemWithCallback(item, inventory, cb);
+		
+		if (item && item.m_itemResource == catEars)
+			return AddCatEarsItem(item, inventory);
+
+        bool started = inventory.TrySpawnPrefabToStorage(item.m_itemResource, null, -1, EStoragePurpose.PURPOSE_ANY, cb);
+        LogItemReplaceTrace(string.Format("Equipment add request started=%1 %2", started, DescribeShopItemForReplaceLog(item)));
+        return started;
+    }	
+	
 }
