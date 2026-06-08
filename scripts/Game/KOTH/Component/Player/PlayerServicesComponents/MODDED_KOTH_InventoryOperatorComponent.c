@@ -2,7 +2,7 @@ modded class KOTH_InventoryOperatorComponent : KOTH_PlayerServicesComponent
 {
 	
 	// This enables debugging logs which make the entire flow be logged if needed
-    protected const bool KOTH_VERBOSE_INVENTORY_LOGGING = true;
+    protected const bool KOTH_VERBOSE_INVENTORY_LOGGING = false;
 	
 	private ResourceName catEars = "{16340C6BB3EB1BEC}Prefabs/Items/Equipment/Accessories/Neko_Ears/Neko_Ears.et";
 
