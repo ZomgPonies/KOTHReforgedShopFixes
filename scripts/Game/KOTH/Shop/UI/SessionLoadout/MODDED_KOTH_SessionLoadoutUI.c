@@ -48,8 +48,8 @@ modded class KOTH_SessionLoadoutUI : ChimeraMenuBase
             total = total + AddTextItem(loadoutData.m_backpack);
         if (loadoutData.m_fullsuit)
             total = total + AddTextItem(loadoutData.m_fullsuit);
-		if (loadoutData.m_neko)
-			total = total + AddTextItem(loadoutData.m_neko);
+		if (loadoutData.m_helmetAccessory)
+			total = total + AddTextItem(loadoutData.m_helmetAccessory);
 
         if (loadoutData.m_throwables)
         {

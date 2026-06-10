@@ -4,7 +4,7 @@ modded class KOTH_PlayerLoadoutManagerComponent : KOTH_PlayerServicesComponent
 
 
 	[RplProp(onRplName: "OnSessionLoadoutRplChanged", condition: RplCondition.OwnerOnly)]
-    protected ResourceName m_rplNeko;
+    protected ResourceName m_rplHelmetAccessory;
 
 
     
@@ -42,7 +42,7 @@ modded class KOTH_PlayerLoadoutManagerComponent : KOTH_PlayerServicesComponent
         m_rplFullsuit = KOTH_SessionPlayerLoadout.GetSlotResource(loadout.m_fullsuit);
         m_rplRangeFinder = KOTH_SessionPlayerLoadout.GetSlotResource(loadout.m_rangeFinder);
         m_rplNvg = KOTH_SessionPlayerLoadout.GetSlotResource(loadout.m_nvg);
-		m_rplNeko = KOTH_SessionPlayerLoadout.GetSlotResource(loadout.m_neko);
+		m_rplHelmetAccessory = KOTH_SessionPlayerLoadout.GetSlotResource(loadout.m_helmetAccessory);
 
         if (!m_rplThrowables)
             m_rplThrowables = new array<ResourceName>();
@@ -80,7 +80,7 @@ modded class KOTH_PlayerLoadoutManagerComponent : KOTH_PlayerServicesComponent
         m_rplFullsuit = emptyResource;
         m_rplRangeFinder = emptyResource;
         m_rplNvg = emptyResource;
-		m_rplNeko = emptyResource;
+		m_rplHelmetAccessory = emptyResource;
 
         if (!m_rplThrowables)
             m_rplThrowables = new array<ResourceName>();
@@ -121,7 +121,7 @@ modded class KOTH_PlayerLoadoutManagerComponent : KOTH_PlayerServicesComponent
         slotResources.Insert(m_rplFullsuit);
         slotResources.Insert(m_rplRangeFinder);
         slotResources.Insert(m_rplNvg);
-		slotResources.Insert(m_rplNeko);
+		slotResources.Insert(m_rplHelmetAccessory);
 
         m_sessionLoadout.ApplyFromRplSlotResources(slotResources, m_rplThrowables, m_shopConfig);
     }

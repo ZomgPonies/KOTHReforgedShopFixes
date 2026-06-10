@@ -1,7 +1,7 @@
 modded class KOTH_SessionPlayerLoadout : Managed
 {
 
-	ref KOTH_ShopItem m_neko;
+	ref KOTH_ShopItem m_helmetAccessory;
 	private ResourceName catEars = "{16340C6BB3EB1BEC}Prefabs/Items/Equipment/Accessories/Neko_Ears/Neko_Ears.et";
 	
 	override bool IsEmpty()
@@ -54,7 +54,7 @@ modded class KOTH_SessionPlayerLoadout : Managed
         if (m_nvg)
             return false;
 		
-		if (m_neko)
+		if (m_helmetAccessory)
 			return false;
 
         if (!m_throwables.IsEmpty())
@@ -82,7 +82,7 @@ modded class KOTH_SessionPlayerLoadout : Managed
         m_backpack = null;
         m_fullsuit = null;
         m_nvg = null;
-		m_neko = null;
+		m_helmetAccessory = null;
         m_throwables = {};
     }	
 			
@@ -212,9 +212,9 @@ modded class KOTH_SessionPlayerLoadout : Managed
 				return false;
 			case KOTH_ShopItemCategory.Accessory:
 				 if(item.m_itemResource == catEars)
-					if (m_neko)
+					if (m_helmetAccessory)
 					{
-						m_neko = null;
+						m_helmetAccessory = null;
 						return true;
 					}
 				return false;
@@ -250,7 +250,7 @@ modded class KOTH_SessionPlayerLoadout : Managed
         m_fullsuit = ResolveShopItem(slotResources[13], shopConfig);
         m_rangeFinder = ResolveShopItem(slotResources[14], shopConfig);
         m_nvg = ResolveShopItem(slotResources[15], shopConfig);
-		m_neko = ResolveShopItem(slotResources[16], shopConfig);
+		m_helmetAccessory = ResolveShopItem(slotResources[16], shopConfig);
 
         m_throwables.Clear();
         if (throwables)

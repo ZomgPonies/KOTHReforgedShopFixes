@@ -68,7 +68,7 @@ modded class KOTH_SessionDataGameModeComponent : SCR_BaseGameModeComponent
 			break;
 			case KOTH_ShopItemCategory.Accessory:
 				if (item.m_itemResource == catEars)
-					playerLoadout.m_neko = item;
+					playerLoadout.m_helmetAccessory = item;
 			break;
 			case KOTH_ShopItemCategory.Grenade:
 				int nadeCounter = 0;

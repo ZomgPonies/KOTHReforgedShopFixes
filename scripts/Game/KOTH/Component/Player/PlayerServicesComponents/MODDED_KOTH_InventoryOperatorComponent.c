@@ -37,7 +37,7 @@ modded class KOTH_InventoryOperatorComponent : KOTH_PlayerServicesComponent
 
 		AddLoadoutItemIfValid(context.m_accessoriesMeds, loadout.m_rangeFinder);
 		AddLoadoutItemIfValid(context.m_accessoriesMeds, loadout.m_nvg);
-		AddLoadoutItemIfValid(context.m_accessoriesMeds, loadout.m_neko);
+		AddLoadoutItemIfValid(context.m_accessoriesMeds, loadout.m_helmetAccessory);
 		if (loadout.m_throwables)
 		{
 			foreach (KOTH_ShopItem throwable : loadout.m_throwables)
