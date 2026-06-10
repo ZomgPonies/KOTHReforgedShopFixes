@@ -1,6 +1,9 @@
 modded class KOTH_SessionDataGameModeComponentClass : SCR_BaseGameModeComponentClass {}
 modded class KOTH_SessionDataGameModeComponent : SCR_BaseGameModeComponent
 {	
+	
+	private ResourceName catEars = "{16340C6BB3EB1BEC}Prefabs/Items/Equipment/Accessories/Neko_Ears/Neko_Ears.et";
+	
 	override void SaveLoadoutChoiceInSession(KOTH_ShopItem item, int playerId)
 	{
 		string playerUID = KOTH_Helper.GetPlayerUID(playerId);
@@ -62,6 +65,10 @@ modded class KOTH_SessionDataGameModeComponent : SCR_BaseGameModeComponent
 			break;
 			case KOTH_ShopItemCategory.NVG:
 				playerLoadout.m_nvg = item;
+			break;
+			case KOTH_ShopItemCategory.Accessory:
+				if (item.m_itemResource == catEars)
+					playerLoadout.m_helmetAccessory = item;
 			break;
 			case KOTH_ShopItemCategory.Grenade:
 				int nadeCounter = 0;
